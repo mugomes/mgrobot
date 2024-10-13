@@ -8,25 +8,17 @@ const listaNav = document.querySelectorAll('.mgrobot');
 listaNav.forEach(button => {
     button.addEventListener('click', () => {
         const cartaoNome = button.getAttribute('id');
- 
-        const botaoRemoverAtivo = document.querySelectorAll('.mgrobot');
-        botaoRemoverAtivo.forEach(div => {
-            div.classList.remove('ativo');
-        });
 
-        const cartaoRemoverAberto = document.querySelectorAll('.cartao-mgrobot');
-        cartaoRemoverAberto.forEach(div => {
-            div.classList.remove('aberto');
-        });
+        const botaoRemoverAtivo = document.querySelector('.ativo');
+        botaoRemoverAtivo.classList.remove('ativo');
+
+        const cartaoRemoverAberto = document.querySelector('.aberto');
+        cartaoRemoverAberto.classList.remove('aberto');
 
         const botaoAtivo = document.getElementById(cartaoNome);
-        if (botaoAtivo) {
-            botaoAtivo.classList.add('ativo');
-        }
+        botaoAtivo.classList.add('ativo');
 
         const cartaoAberto = document.getElementById(`cartao-${cartaoNome}`);
-        if (cartaoAberto) {
-            cartaoAberto.classList.add('aberto');
-        }
+        cartaoAberto.classList.add('aberto');
     });
 });
